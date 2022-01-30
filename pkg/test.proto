@@ -1,10 +1,16 @@
 syntax = "proto3";
 
+import "api/annotations.proto";
+
 option go_package = "./;micro_old_server";
 package micro_old_server;
 
 service MicroOldServer {
-  rpc Test (TestRequest) returns (TestResponse) {}
+  rpc Test (TestRequest) returns (TestResponse) {
+  option (micro.api.http) = {
+    post: "/Test"; body: "*";
+  };
+  };
 }
 
 message TestRequest {
