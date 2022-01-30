@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "./;micro_old_server";
+package micro_old_server;
+
+service MicroOldServer {
+  rpc Test (TestRequest) returns (TestResponse) {}
+}
+
+message TestRequest {
+  string input = 1;
+}
+
+message TestResponse {
+  string output = 1;
+}
