@@ -7,9 +7,9 @@ package micro_old_server;
 
 service MicroOldServer {
   rpc Test (TestRequest) returns (TestResponse) {
-  option (micro.api.http) = {
-    post: "/Test"; body: "*";
-  };
+    option (micro.api.http) = {
+      post: "/Test"; body: "*";
+    };
   };
 }
 
