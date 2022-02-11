@@ -13,15 +13,7 @@ import (
 var (
 	MicroOldServerName = "MicroOldServer"
 
-	MicroOldServerEndpoints = []api.Endpoint{
-		{
-			Name:    "MicroOldServer.Test",
-			Path:    []string{"/Test"},
-			Method:  []string{"POST"},
-			Body:    "*",
-			Handler: "rpc",
-		},
-	}
+	MicroOldServerEndpoints = []api.Endpoint{}
 )
 
 func NewMicroOldServerEndpoints() []api.Endpoint {

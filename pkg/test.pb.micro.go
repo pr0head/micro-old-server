@@ -6,7 +6,6 @@ package micro_old_server
 import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
-	_ "go.unistack.org/micro-proto/v3/api"
 	math "math"
 )
 

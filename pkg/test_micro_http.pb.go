@@ -6,11 +6,10 @@ package micro_old_server
 
 import (
 	context "context"
-	v3 "go.unistack.org/micro-client-http/v3"
+	_ "go.unistack.org/micro-client-http/v3"
 	api "go.unistack.org/micro/v3/api"
 	client "go.unistack.org/micro/v3/client"
 	server "go.unistack.org/micro/v3/server"
-	http "net/http"
 )
 
 type microOldServerClient struct {
@@ -23,11 +22,6 @@ func NewMicroOldServerClient(name string, c client.Client) MicroOldServerClient 
 }
 
 func (c *microOldServerClient) Test(ctx context.Context, req *TestRequest, opts ...client.CallOption) (*TestResponse, error) {
-	opts = append(opts,
-		v3.Method(http.MethodPost),
-		v3.Path("/Test"),
-		v3.Body("*"),
-	)
 	rsp := &TestResponse{}
 	err := c.c.Call(ctx, c.c.NewRequest(c.name, "MicroOldServer.Test", req), rsp, opts...)
 	if err != nil {
